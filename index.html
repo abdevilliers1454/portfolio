@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aayush Bista | Student Portfolio</title>
+
+    <style>
+
+        /* =========================
+           GENERAL
+        ========================== */
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #ffffff;
+            line-height: 1.6;
+
+            background-color: #111111;
+
+            background-image:
+                linear-gradient(
+                    rgba(10, 10, 10, 0.45),
+                    rgba(10, 10, 10, 0.55)
+                ),
+                url("bg.jpg");
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        header {
+            position: absolute;
+
+            top: 20px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            /* Completely solid background */
+            background-color: #6e0f14;
+
+            padding: 14px 30px;
+
+            border: 2px solid #d4af37;
+            border-radius: 12px;
+
+            text-align: center;
+
+            z-index: 1000;
+
+            width: max-content;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.45);
+        }
+
+        .nav-container {
+            text-align: center;
+        }
+
+        .nav-title {
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d4af37;
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 100vh;
+
+            position: relative;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            overflow: hidden;
+
+            padding: 140px 5% 70px;
+        }
+
+        .hero-video {
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            z-index: -2;
+        }
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background: rgba(0, 0, 0, 0.55);
+
+            z-index: -1;
+        }
+
+        .hero-content {
+            width: 100%;
+            max-width: 1000px;
+
+            padding: 45px;
+
+            background: rgba(20, 20, 20, 0.62);
+
+            border: 2px solid rgba(212, 175, 55, 0.65);
+
+            border-radius: 18px;
+
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 4px solid #d4af37;
+
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+
+            margin: 10px 0;
+
+            color: #ffffff;
+
+            letter-spacing: 2px;
+        }
+
+        .hero h2 {
+            color: #d4af37;
+
+            margin: 5px 0;
+
+            font-size: 1.5rem;
+        }
+
+        .hero p {
+            margin: 8px 0;
+
+            font-size: 1.05rem;
+        }
+
+        .hero-quote {
+            font-style: italic;
+
+            color: #dddddd;
+
+            margin: 20px auto;
+
+            max-width: 700px;
+        }
+
+        .hero h3 {
+            color: #d4af37;
+
+            letter-spacing: 2px;
+        }
+
+        .hero-button {
+            display: inline-block;
+
+            margin-top: 15px;
+
+            padding: 13px 28px;
+
+            background-color: #d1181f;
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            border-radius: 7px;
+
+            font-weight: bold;
+
+            border: 2px solid #d4af37;
+
+            transition: 0.3s;
+        }
+
+        .hero-button:hover {
+            background-color: #a80f15;
+        }
+
+
+        /* =========================
+           COMMON SECTIONS
+        ========================== */
+
+        section {
+            width: 100%;
+            max-width: none;
+
+            margin: 0;
+
+            padding: 85px 5%;
+
+            border-radius: 0;
+
+            border-left: none;
+            border-right: none;
+
+            border-top: 1px solid rgba(212, 175, 55, 0.25);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        .section-inner {
+            width: 100%;
+
+            max-width: 1400px;
+
+            margin: auto;
+        }
+
+        section h2 {
+            text-align: center;
+
+            color: #d4af37;
+
+            font-size: 2.2rem;
+
+            margin-top: 0;
+
+            margin-bottom: 35px;
+        }
+
+        section h3 {
+            color: #ffffff;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about {
+            background-color: rgba(42, 42, 42, 0.62);
+        }
+
+        .about-content {
+            max-width: 1100px;
+
+            margin: auto;
+
+            text-align: center;
+
+            font-size: 1.05rem;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+        }
+
+        .quote {
+            padding: 22px;
+
+            margin: 28px 0;
+
+            border-left: 5px solid #d1181f;
+
+            background-color: rgba(0, 0, 0, 0.35);
+
+            font-style: italic;
+
+            color: #dddddd;
+        }
+
+
+        /* =========================
+           EDUCATION
+        ========================== */
+
+        .education {
+            background-color: rgba(20, 20, 20, 0.58);
+        }
+
+        .education-box {
+            max-width: 1000px;
+
+            margin: auto;
+
+            padding: 30px;
+
+            background-color: rgba(50, 50, 50, 0.68);
+
+            border-left: 5px solid #d1181f;
+
+            border-radius: 10px;
+        }
+
+        .education-box h3 {
+            color: #d4af37;
+
+            margin-top: 0;
+
+            font-size: 1.4rem;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================== */
+
+        .skills {
+            background-color: rgba(42, 42, 42, 0.62);
+        }
+
+        .skills-container {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 25px;
+
+            flex-wrap: wrap;
+        }
+
+        .skill-box {
+            flex: 1 1 220px;
+
+            max-width: 280px;
+
+            padding: 25px;
+
+            text-align: center;
+
+            background-color: rgba(25, 25, 25, 0.72);
+
+            border: 1px solid #d1181f;
+
+            border-radius: 10px;
+
+            transition: 0.3s;
+        }
+
+        .skill-box:hover {
+            transform: translateY(-5px);
+
+            border-color: #d4af37;
+        }
+
+        .skill-box h3 {
+            color: #d4af37;
+        }
+
+
+        /* =========================
+           RCB
+        ========================== */
+
+        .rcb {
+            background-color: rgba(40, 10, 12, 0.64);
+
+            border-color: rgba(209, 24, 31, 0.5);
+        }
+
+        .rcb-content {
+            max-width: 1100px;
+
+            margin: auto;
+
+            text-align: center;
+
+            font-size: 1.05rem;
+        }
+
+        .rcb-title {
+            font-size: 4rem;
+
+            color: #d1181f;
+
+            font-weight: bold;
+
+            margin-bottom: 0;
+        }
+
+        .rcb-subtitle {
+            color: #d4af37;
+
+            font-size: 1.4rem;
+
+            font-weight: bold;
+        }
+
+        .rcb-quote {
+            margin: 30px auto;
+
+            padding: 22px;
+
+            background-color: rgba(0, 0, 0, 0.4);
+
+            border-radius: 10px;
+
+            font-style: italic;
+        }
+
+
+        /* =========================
+           MEDIA
+        ========================== */
+
+        .media {
+            background-color: rgba(18, 18, 18, 0.58);
+        }
+
+        .media-box {
+            margin-bottom: 50px;
+
+            text-align: center;
+        }
+
+        .media-box:last-child {
+            margin-bottom: 0;
+        }
+
+        .media-box h3 {
+            color: #d4af37;
+
+            font-size: 1.4rem;
+        }
+
+        audio {
+            width: 90%;
+
+            max-width: 700px;
+        }
+
+        video {
+            max-width: 100%;
+
+            border-radius: 10px;
+
+            border: 2px solid #d1181f;
+
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        iframe {
+            width: 100%;
+
+            max-width: 1200px;
+
+            height: 450px;
+
+            border: 2px solid #d4af37;
+
+            border-radius: 10px;
+
+            background-color: #ffffff;
+        }
+
+
+        /* =========================
+           STUDENT INFORMATION
+        ========================== */
+
+        .info-table {
+            background-color: rgba(42, 42, 42, 0.62);
+
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            border-collapse: collapse;
+
+            background-color: rgba(15, 15, 15, 0.72);
+        }
+
+        th,
+        td {
+            padding: 17px;
+
+            border: 1px solid #555;
+
+            text-align: left;
+        }
+
+        th {
+            background-color: #6e0f14;
+
+            color: #d4af37;
+        }
+
+        td {
+            background-color: rgba(30, 30, 30, 0.65);
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact {
+            background-color: rgba(18, 18, 18, 0.62);
+        }
+
+        .contact .section-inner {
+            max-width: 1200px;
+        }
+
+        form {
+            display: flex;
+
+            flex-direction: column;
+
+            width: 100%;
+
+            max-width: 850px;
+
+            margin: auto;
+
+            background-color: rgba(55, 55, 55, 0.80);
+
+            padding: 45px;
+
+            border-radius: 14px;
+
+            border: 2px solid #d1181f;
+
+            box-shadow: 0 0 25px rgba(209, 24, 31, 0.22);
+        }
+
+        label {
+            margin-top: 18px;
+
+            margin-bottom: 8px;
+
+            color: #d4af37;
+
+            font-weight: bold;
+
+            font-size: 1.05rem;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+
+            padding: 15px;
+
+            border-radius: 7px;
+
+            border: 1px solid #555;
+
+            background-color: rgba(20, 20, 20, 0.90);
+
+            color: #ffffff;
+
+            font-family: inherit;
+
+            font-size: 1rem;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+
+            border-color: #d4af37;
+        }
+
+        .form-buttons {
+            display: flex;
+
+            gap: 15px;
+
+            margin-top: 28px;
+        }
+
+        button {
+            flex: 1;
+
+            padding: 15px;
+
+            border: none;
+
+            border-radius: 7px;
+
+            font-weight: bold;
+
+            font-size: 1rem;
+
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            background-color: #d1181f;
+
+            color: #ffffff;
+        }
+
+        .reset-btn {
+            background-color: #d4af37;
+
+            color: #111111;
+        }
+
+        .submit-btn:hover {
+            background-color: #a80f15;
+        }
+
+        .reset-btn:hover {
+            background-color: #b89520;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            header {
+                width: 92%;
+
+                padding: 12px 15px;
+
+                top: 10px;
+            }
+
+            .nav-title {
+                font-size: 1.3rem;
+            }
+
+            .nav-links {
+                gap: 10px;
+            }
+
+            .nav-links a {
+                font-size: 0.85rem;
+            }
+
+            .hero {
+                padding-top: 190px;
+            }
+
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .hero-content {
+                padding: 30px;
+            }
+
+            section {
+                padding: 70px 4%;
+            }
+
+            form {
+                padding: 30px;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            header {
+                width: 94%;
+            }
+
+            .nav-links {
+                gap: 7px;
+            }
+
+            .nav-links a {
+                font-size: 0.75rem;
+            }
+
+            .hero {
+                padding-top: 210px;
+            }
+
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+
+            .hero-content {
+                padding: 25px 18px;
+            }
+
+            .profile-photo {
+                width: 120px;
+                height: 120px;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            section h2 {
+                font-size: 1.7rem;
+            }
+
+            .rcb-title {
+                font-size: 3rem;
+            }
+
+            form {
+                padding: 25px 20px;
+            }
+
+            .form-buttons {
+                flex-direction: column;
+            }
+
+            iframe {
+                height: 350px;
+            }
+
+            th,
+            td {
+                padding: 12px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header>
+
+        <div class="nav-container">
+
+            <div class="nav-title">
+                Aayush Bista
+            </div>
+
+            <div class="nav-links">
+
+                <a href="#home">Home</a>
+
+                <a href="#about">About</a>
+
+                <a href="#education">Education</a>
+
+                <a href="#skills">Skills</a>
+
+                <a href="#rcb">RCB</a>
+
+                <a href="#media">Media</a>
+
+                <a href="#contact">Contact</a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero" id="home">
+
+        <video
+            class="hero-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            poster="poster.jpg">
+
+            <source src="vdo.mp4" type="video/mp4">
+
+            Your browser does not support the video element.
+
+        </video>
+
+
+        <div class="hero-content">
+
+            <img
+                src="bista.png"
+                alt="Aayush Bista"
+                class="profile-photo">
+
+
+            <h1>
+                AAYUSH BISTA
+            </h1>
+
+            <h2>
+                Grade 11G
+            </h2>
+
+            <p>
+                St. Xavier's College, Maitighar
+            </p>
+
+            <p>
+                Student • Learner • Cricket Enthusiast • RCB Fan
+            </p>
+
+            <p class="hero-quote">
+                "Exploring technology, learning new things
+                and enjoying the journey along the way."
+            </p>
+
+            <h3>
+                PLAY BOLD. DREAM BIG.
+            </h3>
+
+            <a
+                href="#about"
+                class="hero-button">
+
+                Explore My Journey
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section class="about" id="about">
+
+        <div class="section-inner">
+
+            <h2>
+                About Me
+            </h2>
+
+            <div class="about-content">
+
+                <p>
+                    My name is <strong>Aayush Bista</strong>.
+                    I am a Grade 11G student at
+                    St. Xavier's College, Maitighar, Kathmandu.
+                </p>
+
+                <p>
+                    I am curious about technology and enjoy
+                    learning new things related to computers
+                    and web development.
+                </p>
+
+                <p>
+                    Apart from technology, cricket is one of
+                    my biggest interests. I am a proud supporter
+                    of Royal Challengers Bengaluru.
+                </p>
+
+                <div class="quote">
+                    "Keep learning, keep practicing,
+                    and keep improving."
+                </div>
+
+                <p>
+                    One of the things I am currently learning
+                    is HTML. I am practicing different HTML
+                    tags and learning how websites are created.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         EDUCATION
+    ========================== -->
+
+    <section class="education" id="education">
+
+        <div class="section-inner">
+
+            <h2>
+                Education
+            </h2>
+
+            <div class="education-box">
+
+                <h3>
+                    St. Xavier's College, Maitighar
+                </h3>
+
+                <p>
+                    <strong>Grade:</strong>
+                    11G
+                </p>
+
+                <p>
+                    <strong>Location:</strong>
+                    Kathmandu, Nepal
+                </p>
+
+                <p>
+                    Currently studying Grade 11 and
+                    developing my knowledge in science,
+                    technology and computer-related subjects.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section class="skills" id="skills">
+
+        <div class="section-inner">
+
+            <h2>
+                My Skills
+            </h2>
+
+
+            <div class="skills-container">
+
+
+                <div class="skill-box">
+
+                    <h3>
+                        HTML
+                    </h3>
+
+                    <p>
+                        Learning HTML tags and
+                        creating web pages.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-box">
+
+                    <h3>
+                        CSS
+                    </h3>
+
+                    <p>
+                        Learning basic styling,
+                        layouts and designs.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-box">
+
+                    <h3>
+                        Web Development
+                    </h3>
+
+                    <p>
+                        Exploring the basics
+                        of website development.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-box">
+
+                    <h3>
+                        Creativity
+                    </h3>
+
+                    <p>
+                        Enjoy creating designs
+                        and new ideas.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-box">
+
+                    <h3>
+                        Teamwork
+                    </h3>
+
+                    <p>
+                        Learning and working
+                        together with others.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-box">
+
+                    <h3>
+                        Learning
+                    </h3>
+
+                    <p>
+                        Always trying to learn
+                        and improve.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         RCB
+    ========================== -->
+
+    <section class="rcb" id="rcb">
+
+        <div class="section-inner">
+
+            <h2>
+                My Passion
+            </h2>
+
+            <div class="rcb-content">
+
+                <div class="rcb-title">
+                    RCB
+                </div>
+
+                <div class="rcb-subtitle">
+                    Royal Challengers Bengaluru
+                </div>
+
+                <p>
+                    Cricket is one of my favorite sports,
+                    and Royal Challengers Bengaluru is
+                    my favorite team.
+                </p>
+
+                <p>
+                    Supporting RCB is not only about winning.
+                    It is about passion, loyalty and enjoying
+                    the game.
+                </p>
+
+                <div class="rcb-quote">
+                    "Play bold. Support with passion.
+                    Dream big."
+                </div>
+
+                <p>
+                    RCB represents the excitement and
+                    passion that makes cricket special to me.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         MEDIA
+    ========================== -->
+
+    <section class="media" id="media">
+
+        <div class="section-inner">
+
+            <h2>
+                Media
+            </h2>
+
+
+            <!-- AUDIO -->
+
+            <div class="media-box">
+
+                <h3>
+                    My Audio
+                </h3>
+
+                <p>
+                    This section demonstrates the HTML5
+                    audio element.
+                </p>
+
+                <audio controls>
+
+                    <source
+                        src="audio.mp3"
+                        type="audio/mpeg">
+
+                    Your browser does not support
+                    the audio element.
+
+                </audio>
+
+            </div>
+
+
+
+            <!-- VIDEO -->
+
+            <div class="media-box">
+
+                <h3>
+                    My Video
+                </h3>
+
+                <p>
+                    This section demonstrates the HTML5
+                    video element with a poster image.
+                </p>
+
+                <video
+                    controls
+                    poster="poster.jpg"
+                    width="600">
+
+                    <source
+                        src="vdo.mp4"
+                        type="video/mp4">
+
+                    Your browser does not support
+                    the video element.
+
+                </video>
+
+            </div>
+
+
+
+            <!-- IFRAME -->
+
+            <div class="media-box">
+
+                <h3>
+                    RCB Official Website
+                </h3>
+
+                <p>
+                    An external website embedded using
+                    the HTML iframe element.
+                </p>
+
+                <iframe
+                    src="https://www.royalchallengers.com/"
+                    title="Royal Challengers Bengaluru Official Website">
+                </iframe>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         STUDENT INFORMATION
+    ========================== -->
+
+    <section class="info-table">
+
+        <div class="section-inner">
+
+            <h2>
+                Student Information
+            </h2>
+
+
+            <table>
+
+                <tr>
+                    <th>
+                        Information
+                    </th>
+
+                    <th>
+                        Details
+                    </th>
+                </tr>
+
+                <tr>
+                    <td>
+                        Name
+                    </td>
+
+                    <td>
+                        Aayush Bista
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        College
+                    </td>
+
+                    <td>
+                        St. Xavier's College, Maitighar
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Grade
+                    </td>
+
+                    <td>
+                        11G
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Location
+                    </td>
+
+                    <td>
+                        Kathmandu, Nepal
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Interest
+                    </td>
+
+                    <td>
+                        Cricket &amp; Technology
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Favorite Team
+                    </td>
+
+                    <td>
+                        Royal Challengers Bengaluru
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section class="contact" id="contact">
+
+        <div class="section-inner">
+
+            <h2>
+                Contact Me
+            </h2>
+
+
+            <form>
+
+
+                <label for="name">
+                    Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required>
+
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required>
+
+
+                <label for="team">
+                    Favorite Cricket Team
+                </label>
+
+                <select
+                    id="team"
+                    name="team">
+
+                    <option value="CSK">
+                        Chennai Super Kings ⭐⭐⭐⭐⭐
+                    </option>
+
+                    <option value="RCB">
+                        RCB
+                    </option>
+
+                    <option value="KKR">
+                       KKR
+                    </option>
+
+                    <option value="MI">
+                        MI
+                    </option>
+                    <option value="GT">
+                        GT
+                    </option>
+                    <option value="RR">
+                        RR
+                    </option>
+                    <option value="DC">
+                        DC
+                    </option>
+                    <option value="PBKS">
+                        PBKS
+                    </option>
+                    <option value="SRH">
+                        SRH
+                    </option>
+                    <option value="LSG">
+                        LSG
+                    </option>
+
+                    
+
+                </select>
+
+
+                <label for="message">
+                    Message
+                </label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="7"
+                    placeholder="Write your message here..."></textarea>
+
+
+                <div class="form-buttons">
+
+                    <button
+                        type="submit"
+                        class="submit-btn">
+
+                        Submit
+
+                    </button>
+
+
+                    <button
+                        type="reset"
+                        class="reset-btn">
+
+                        Reset
+
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+</body>
+</html>
